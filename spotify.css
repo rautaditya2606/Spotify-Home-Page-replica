@@ -1,0 +1,183 @@
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #121212;
+    width: 340px;
+    height: 88vh;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-right: 5px ;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 100px;
+}
+
+.content {
+    background-color: #121212;
+    flex: 1;
+    border-radius: 1rem;
+    overflow: auto;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 77px;
+    margin-right: 5px;
+}
+
+.music {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+    border-top: 1px solid #333;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #333;
+    
+}
+
+.nav-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 1rem;
+    margin-bottom: 5px;
+    background-color: #121212;
+}
+
+.nav-option a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+.search-option {
+    margin-top: 20px;
+}
+
+.nav-option:hover {
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+.library{
+    border-radius: 50%;
+    background-color: #121212;
+    margin-top: 1rem;
+}
+.lib-option{
+    border-radius: 1rem;
+}
+.playlist{
+    background-color: #333;
+    margin-top:3vh ;
+    height: 26vh;
+    width: 45vh;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.navbar{
+    position: fixed;
+    top: 5px;
+    background-color: #121212;
+}
+#id{
+    align-items: end;
+}
+.album ,h3{
+    background-color: #121212;
+}
+.player{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.player .play{
+    height: 2rem;
+    position: absolute;
+    left: 48%;
+    top:13%;
+}
+.player .shuffle{
+    height: 1rem;
+    background-color:black ;
+    position:absolute;
+    left: 40%;
+    top: 24%;
+}
+.back{
+    height: 1rem;
+    position:absolute;
+    left: 44%;
+    top: 24%;
+}
+.front{
+    height: 1rem;
+    position:absolute;
+    left: 54%;
+    top: 24%;
+}
+.repeat{
+    height: 1rem;
+    position:absolute;
+    left: 58%;
+    top: 24%;
+}
+.album{
+    background-color: black;
+}
+.Borderline{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    margin-top: 0.7rem;
+    margin-left: 0.5rem;
+}
+.speaker i{
+    position: absolute;
+    right: 10rem;
+    opacity: 0.5;
+}
+.line{
+    height: 1px;
+    width: 25%;
+    color: antiquewhite;
+    border: white 1px solid; 
+    position: absolute;
+    left: 37%;
+}
+.start{
+    position: absolute;
+    left: 34%;
+    top:69% ;
+    font-size: small;
+}
+.end{
+    position: absolute;
+    right:35% ;
+    top: 69%;
+    font-size: small;
+}
