@@ -1,4 +1,3 @@
-
 * {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -13,7 +12,9 @@
 
 .main {
     display: flex;
+    flex-direction: row;
     height: 100vh;
+    width: 100%;
 }
 
 .sidebar {
@@ -24,10 +25,11 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    margin-right: 5px ;
+    margin-right: 5px;
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 100px;
+    transition: width 0.3s ease;
 }
 
 .content {
@@ -48,6 +50,7 @@
     width: 100%;
     height: 72px;
     border-top: 1px solid #333;
+    z-index: 100;
 }
 
 .nav {
@@ -55,7 +58,6 @@
     flex-direction: column;
     border-radius: 1rem;
     background-color: #333;
-    
 }
 
 .nav-option {
@@ -72,6 +74,9 @@
     text-decoration: none;
     padding: 5px;
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .search-option {
@@ -82,86 +87,104 @@
     background-color: #1f1f1f;
     cursor: pointer;
 }
-.library{
+
+.library {
     border-radius: 50%;
     background-color: #121212;
     margin-top: 1rem;
 }
-.lib-option{
+
+.lib-option {
     border-radius: 1rem;
 }
-.playlist{
+
+.playlist {
     background-color: #333;
-    margin-top:3vh ;
+    margin-top: 3vh;
     height: 26vh;
-    width: 45vh;
+    width: 100%;
+    max-width: 45vh;
     border-radius: 1rem;
     margin-top: 1rem;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     top: 5px;
     background-color: #121212;
+    z-index: 90;
 }
-#id{
-    align-items: end;
-}
-.album ,h3{
+
+.album, h3 {
     background-color: #121212;
 }
-.player{
+
+.player {
     width: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+    position: relative;
 }
-.player .play{
+
+.player .play {
     height: 2rem;
     position: absolute;
     left: 48%;
-    top:13%;
+    top: 13%;
 }
-.player .shuffle{
+
+.player .shuffle {
     height: 1rem;
-    background-color:black ;
-    position:absolute;
+    background-color: black;
+    position: absolute;
     left: 40%;
     top: 24%;
 }
-.back{
+
+.back {
     height: 1rem;
-    position:absolute;
+    position: absolute;
     left: 44%;
     top: 24%;
 }
-.front{
+
+.front {
     height: 1rem;
-    position:absolute;
+    position: absolute;
     left: 54%;
     top: 24%;
 }
-.repeat{
+
+.repeat {
     height: 1rem;
-    position:absolute;
+    position: absolute;
     left: 58%;
     top: 24%;
 }
-.album{
+
+.album {
     background-color: black;
+    display: flex;
+    align-items: center;
 }
-.Borderline{
+
+.Borderline {
     height: 3rem;
     width: 3rem;
     border-radius: 0.5rem;
     margin-top: 0.7rem;
     margin-left: 0.5rem;
 }
-.speaker i{
+
+.speaker i {
     position: absolute;
     right: 10rem;
     opacity: 0.5;
 }
-.line{
+
+.line {
     height: 1px;
     width: 25%;
     color: antiquewhite;
@@ -169,15 +192,169 @@
     position: absolute;
     left: 37%;
 }
-.start{
+
+.start {
     position: absolute;
     left: 34%;
-    top:69% ;
-    font-size: small;
-}
-.end{
-    position: absolute;
-    right:35% ;
     top: 69%;
     font-size: small;
+}
+
+.end {
+    position: absolute;
+    right: 35%;
+    top: 69%;
+    font-size: small;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+    .line {
+        width: 20%;
+    }
+    .start {
+        left: 32%;
+    }
+    .end {
+        right: 33%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 280px;
+    }
+    .player .play {
+        left: 46%;
+    }
+    .player .shuffle {
+        left: 36%;
+    }
+    .back {
+        left: 41%;
+    }
+    .front {
+        left: 52%;
+    }
+    .repeat {
+        left: 56%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: calc(100% - 10px);
+        height: auto;
+        max-height: 40vh;
+        margin-bottom: 10px;
+    }
+    .content {
+        margin-bottom: 87px;
+    }
+    .player .play {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .player .shuffle {
+        left: 35%;
+    }
+    .back {
+        left: 42%;
+    }
+    .front {
+        left: 55%;
+    }
+    .repeat {
+        left: 62%;
+    }
+    .line {
+        width: 40%;
+        left: 30%;
+    }
+    .start {
+        left: 25%;
+    }
+    .end {
+        right: 25%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .sidebar {
+        max-height: 30vh;
+    }
+    .playlist {
+        height: 20vh;
+    }
+    .player {
+        width: 80%;
+    }
+    .player .shuffle {
+        left: 30%;
+    }
+    .back {
+        left: 40%;
+    }
+    .front {
+        left: 60%;
+    }
+    .repeat {
+        left: 70%;
+    }
+    .line {
+        width: 60%;
+        left: 20%;
+    }
+    .start {
+        left: 15%;
+    }
+    .end {
+        right: 15%;
+    }
+    .speaker i {
+        right: 5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        padding: 5px;
+    }
+    .nav-option {
+        padding: 8px;
+    }
+    .content {
+        padding: 10px;
+    }
+    .music {
+        height: 60px;
+    }
+    .player .play {
+        top: 15%;
+    }
+    .player .shuffle, .back, .front, .repeat {
+        top: 28%;
+    }
+    .line {
+        width: 70%;
+        left: 15%;
+    }
+    .start {
+        left: 10%;
+    }
+    .end {
+        right: 10%;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .sidebar {
+        max-height: 45vh;
+    }
+    .music {
+        height: 55px;
+    }
 }
